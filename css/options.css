@@ -1,0 +1,512 @@
+/*定义整个滚动条高宽及背景：高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width:5px;
+}
+html, textarea {
+  scrollbar-width: thin;
+}
+/*定义滚动条轨道：内阴影+圆角*/
+::-webkit-scrollbar-track {
+    background-color:#f5f5f500;
+}
+/*定义滑块：内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius:10px;
+    background-color:#1a73e8;
+}
+body {
+  background: rgb(248, 249, 250);
+  font-size: 13px;
+  font-family: "Microsoft YaHei", "Helvetica", "Arial", sans-serif;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 640px;
+}
+/* 显示优化 */
+.wrapper  input {
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 1.125em;
+  font-weight: normal;
+  margin: 0;
+}
+h2 {
+  font-size: 1.125em;
+  font-weight: normal;
+  margin: 0;
+}
+p {
+  margin: auto;
+}
+.hide {
+  display: none;
+}
+.optionBox {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  padding: 0.75em 1.25em;
+  margin-top: 5px;
+}
+table {
+  width: 100%;
+  text-align: center;
+}
+input {
+  border: solid 1px rgb(20 69 137 / 40%);
+  padding: 5px 5px;
+}
+input.ext {
+  width: 100px;
+  text-align: center;
+}
+input.type {
+  width: 200px;
+  text-align: center;
+}
+input.size {
+  width: 100px;
+  text-align: center;
+}
+input.regexType {
+  width: 20px;
+  text-align: center;
+}
+input.regexExt {
+  width: 35px;
+  text-align: center;
+}
+input.regex {
+  width: 395px;
+  text-align: center;
+}
+input#OtherAutoClear {
+  margin-left: 250px;
+  width: 45px;
+}
+.width100 {
+  width: 100%;
+}
+/* 滑动开关 组件 */
+.switch {
+  height: 22px;
+  width: 50px;
+  margin: auto;
+}
+.switch .switchRound {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(189, 193, 198);
+  transition: all 0.2s ease-in-out;
+}
+.switch .switchRoundBtn {
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  bottom: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.switch .switchInput {
+  display: none;
+}
+.switch .switchInput:checked + .switchRound {
+  background-color: rgb(26, 115, 232);
+}
+.switch .switchInput:checked + .switchRound > .switchRoundBtn {
+  left: 29px;
+}
+.switch .switchRadius {
+  border-radius: 50px;
+}
+/* 滑动开关 组件 END */
+.icon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+.list {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.item {
+  align-items: center;
+  display: flex;
+  min-height: 30px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-content: space-around;
+}
+.item .switch {
+  margin-right: 50px;
+}
+.optionsTitle {
+  margin-top: 20px;
+}
+.RemoveButton {
+  fill: rgb(95, 99, 104);
+  height: 20px;
+  cursor: pointer;
+}
+.themeColor {
+  color: rgb(26, 115, 232);
+}
+button,
+.button2 {
+  background: #fff;
+  border: solid 1px #c7c7c780;
+  border-radius: 4px;
+  color: rgb(26, 115, 232);
+  cursor: pointer;
+  padding: calc(0.5em - 1px) 1em;
+  margin-left: 5px;
+  margin-right: 5px;
+  user-select: none;
+  /* margin-top: 10px; */
+}
+button:hover {
+  background: rgb(66 133 244 / 4%);
+}
+button:active {
+  background: rgb(66 133 244 / 10%);
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+.button2 {
+  background: rgb(26 115 232);
+  color: rgb(255 255 255);
+}
+.button2:hover {
+  background: rgb(26 115 232 / 90%);
+}
+.button2:active {
+  background: rgb(26 115 232 / 50%);
+}
+.no-drop {
+  background-color: #ccc !important;
+  cursor: no-drop;
+  color: #fff;
+}
+.explain {
+  color: rgb(95, 99, 104);
+}
+#typeList,
+#extList {
+  margin-top: 10px;
+}
+.otherOption .item {
+  margin-bottom: 5px;
+  min-height: 35px;
+}
+#m3u8_url,
+#mpd_url,
+.test_url {
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  color: rgb(26, 115, 232);
+}
+.block {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.06);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.m3u8_wrapper .block {
+  border-bottom: 0px;
+}
+.wrapper1024 {
+  margin: 0 auto;
+  width: 1024px;
+}
+.wrapper1080 {
+  margin: 0 auto;
+  width: 1080px;
+}
+textarea {
+  font-size: 12px;
+  font-family: "Microsoft YaHei", "Helvetica", "Arial", sans-serif;
+}
+#media_file {
+  word-break: break-all;
+}
+/* #media_file {
+  font-size: 12px;
+  font-family: "Microsoft YaHei", "Helvetica", "Arial", sans-serif;
+  height: 700px;
+  overflow-y: auto;
+  border: solid 1.5px rgb(0 0 0 / 50%);
+  word-break: break-all;
+} */
+#formatStr {
+  width: 145px;
+}
+#tips input {
+  color: rgb(26, 115, 232);
+}
+.keyUrl {
+  width: 1034px;
+}
+.fullInput {
+  /* width: 975px; */
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+.select {
+  appearance: none;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMiIgZmlsbD0iIzVGNjM2OCI+PHBhdGggZD0iTTAgMGgyNEwxMiAxMnoiLz48L3N2Zz4=)
+    calc(100% - 8px) center no-repeat;
+  background-color: rgb(241, 243, 244);
+  background-size: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.m3u8Key {
+  width: 233px;
+}
+#PlayerTemplate {
+  width: 200px;
+}
+#errorTsList p {
+  color: red;
+  word-break: break-all;
+}
+.progress-bar {
+  height: 15px;
+  background-color: rgb(189, 193, 198);
+  border-radius: 3px;
+  margin: 3px;
+  margin-bottom: 10px;
+}
+.progress {
+  width: 0px;
+  height: 100%;
+  background-color: rgb(26, 115, 232);
+  border-radius: 3px;
+}
+#fileSize,
+#fileDuration {
+  margin-left: 20px;
+}
+.not-allowed {
+  cursor: not-allowed;
+  background-color: #ccc;
+  color: #fff;
+}
+.not-allowed:hover {
+  background: #ccc;
+}
+.not-allowed:active {
+  background: #ccc;
+}
+#showM3u8Help {
+  margin-left: 10px;
+  margin-top: 1px;
+  margin-right: 0px;
+  padding: 2px;
+}
+.m3u8checkbox {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  user-select: none;
+  margin: 0 5px 0 5px;
+}
+.merge {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  align-items: center;
+}
+.customKey input {
+  margin-right: 5px;
+}
+.wrapper .button {
+  margin-top: 5px;
+}
+.rangeDown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+.rangeDown .merge {
+  margin-top: 0;
+}
+#rangeStart,
+#rangeEnd {
+  width: 50px;
+  /* text-align:center;
+  vertical-align:middle; */
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+#loading a {
+  word-break: break-all;
+}
+.line {
+  border-top: solid 1px rgb(0 0 0 / 50%);
+  margin: 10px 0 10px 0;
+}
+#next_m3u8 a {
+  word-break: break-all;
+}
+.key {
+  align-items: flex-end;
+}
+.key div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.key input {
+  width: 265px;
+}
+.method input {
+  width: 100px;
+}
+.offset {
+  width: 256px;
+}
+.videoInfo div {
+  margin-right: 5px;
+}
+.flex {
+  display: flex;
+}
+.m3u8dlArg {
+  margin-top: 10px;
+  height: 100px;
+  word-break: break-all;
+  width: 100%;
+}
+.break-all {
+  word-break: break-all;
+}
+/* MPD*/
+.dash .select {
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+/* JSON格式化 */
+.json-document {
+  margin-top: 0px;
+}
+ul.json-dict,
+ol.json-array {
+  list-style-type: none;
+  margin: 0 0 0 1px;
+  border-left: 1px dotted #ccc;
+  padding-left: 2em;
+}
+.json-string {
+  color: #0b7500;
+  word-break: break-all;
+  white-space: break-spaces;
+}
+.json-literal {
+  color: #1a01cc;
+  font-weight: bold;
+}
+a.json-toggle {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+a.json-toggle:focus {
+  outline: none;
+}
+a.json-toggle:before {
+  font-size: 1.1em;
+  color: #c0c0c0;
+  content: "\25BC";
+  position: absolute;
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  line-height: 1em;
+  left: -1.2em;
+}
+a.json-toggle:hover:before {
+  color: #aaa;
+}
+a.json-toggle.collapsed:before {
+  transform: rotate(-90deg);
+}
+a.json-placeholder {
+  color: #aaa;
+  padding: 0 1em;
+  text-decoration: none;
+}
+a.json-placeholder:hover {
+  text-decoration: underline;
+}
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  .button,
+  button {
+    --background-color-two: #1e293b;
+    --line-color: #228e6c;
+    --background-color: #0f172a;
+    --text-color: #94a3b8;
+    --link-color: rgb(2 132 199/1);
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+  .button2 {
+    color: var(--text-color);
+    background: rgb(26 115 232 / 50%);
+  }
+  .optionBox {
+    background: var(--background-color);
+    box-shadow: 0 1px 2px 0 rgb(255 255 255 / 30%),
+      0 1px 3px 1px rgb(255 255 255 / 15%);
+  }
+  .button2:active {
+    background: var(--background-color);
+  }
+  .explain,
+  .optionsTitle,
+  th,
+  .item {
+    color: var(--text-color);
+  }
+  input,
+  textarea,
+  select {
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+  .select {
+    background-color: var(--background-color-two);
+  }
+  .switch .switchInput:checked + .switchRound {
+    background-color: rgb(26 115 232 / 50%);
+  }
+  a,
+  a:link,
+  a:visited,
+  #m3u8_url,
+  #mpd_url,
+  .test_url {
+    color: var(--link-color);
+  }
+  .themeColor {
+    color: var(--text-color);
+  }
+}
