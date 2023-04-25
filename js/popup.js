@@ -243,7 +243,6 @@ function AddMedia(data) {
         if (G.Player =='mpv://play/') {
             let data_url = window.btoa(data.url);
             let safe = data_url.replace(/\//g, "_").replace(/\+/g, "-");
-            alert(`mpv://play/${safe}`)
             chrome.tabs.update({ url: `mpv://play/${safe}` });
             return false;
         }
